@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Aula 05/10</title>
+
+
+        <style>
+       
+       #fase{
+           width: 400px;
+           height: 400px;
+           background: black;
+           position: relative;
+       }
+
+       #personagem{
+           width: 50px;
+           height: 50px;
+           position: absolute;
+           background-color: yellow;
+       }
+
+        </style>
+
+    </head>
+    <body>
+
+        <button onclick="movimento()">Mover Personagem</button>
+        <div id="fase">
+            <div id="personagem"></div>
+        </div>
+
+
+
+
+        <script>
+
+                function movimento(){
+                    var mPersonagem = document.getElementById("personagem");
+                    var pos = 0;
+                    var id= setInterval(frame, 5);
+
+                    function frame(){
+
+                        if(pos == 350){
+                            clearInterval(id)
+                        }else{
+                            pos++;
+                            mPersonagem.style.top = pos + "px";
+                            mPersonagem.style.left=pos + "px";
+                           
+                        }
+                    }
+                }
+        </script>
+    
+    </body>
+</html>
